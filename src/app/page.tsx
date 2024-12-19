@@ -1,5 +1,6 @@
 "use client";
 import { AiFillGithub, AiFillYoutube, AiOutlineDownload, AiOutlineSearch } from "react-icons/ai";
+import Image from "next/image";
 import axios from "axios";
 import { useState } from "react";
 import { useAuth } from "@clerk/nextjs";
@@ -150,7 +151,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
           {images.map((image) => (
             <div key={image.id} className="relative group drop-shadow-xl">
-              <img
+              <Image
                 src={image.src.medium}
                 alt={`Photo by ${image.photographer}`}
                 className="w-full h-64 object-cover rounded-sm shadow-2xl hover:shadow-2xl"
